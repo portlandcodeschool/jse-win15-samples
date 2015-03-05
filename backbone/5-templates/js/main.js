@@ -1,14 +1,16 @@
 //ASSIGNMENT: 
-// Look up in the underscore js documentation how to change the
-// template settings to use "Mustache.js" style template interpolation 
+// Look up in the underscore js documentation 
+// (http://underscorejs.org/#template)
+// how to change the template settings to use
+// "Mustache.js" style template interpolation (i.e. {{...}})
 //ANSWER: 
 
 
 //ASSIGNMENT: 
 // Change the template in the variable compiledTemplate in TodoListView 
-// to match the new template delimeters 
+// to match the new template delimiters 
 // ASSIGNMENT: 
-// In a group, compare the string concatenation in example 5 with the use of 
+// In a group, compare the string concatenation in example 4 with the use of 
 // templates here
 
 
@@ -84,18 +86,22 @@ app.TodoInputView = Backbone.View.extend({
 
 app.TodoListView = Backbone.View.extend({
   el: '#todo-list',
+  template: '<li><strong><%=title%>: </strong><%=description%></li>',
   initialize: function () {
     this.collection.on('add', this.render, this);
+    this.compiledTemplate = _.template(this.template); //compile only once
   },
   render: function () {
-    var outputHtml = '';
-    // ANSWER: 
-    var compiledTemplate = _.template('<li><strong><%=title%>: </strong><%=description%></li>');
-    console.log(compiledTemplate);
+    var outputHtml = '',
+        compiledTemplate = this.compiledTemplate;
+
+    //console.log(compiledTemplate);
     this.collection.models.forEach(function (item) {
+      // build data object:
       var data = {};
       data.title = item.get('title');
       data.description = item.get('description');
+      // feed data object to compiled template:
       outputHtml += compiledTemplate(data);
     });
 
