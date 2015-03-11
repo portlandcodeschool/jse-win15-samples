@@ -1,0 +1,15 @@
+{
+  "name": "node_basics",
+  "version": "1.0.0",
+  "description": "A suite of simple node demos",
+  "main": "0-process-argv.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hello": "node 2-hello1.js",
+    "async": "node 1-async-demo1.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+  }
+}
