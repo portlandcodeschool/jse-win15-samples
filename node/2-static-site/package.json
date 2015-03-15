@@ -1,0 +1,17 @@
+{
+  "name": "simple_static_site_server_demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server3.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server3.js"
+  },
+  "author": "Dan Bauer",
+  "license": "ISC",
+  "dependencies": {
+    "routes-router": "^4.1.1",
+    "send-data": "^3.3.3",
+    "st": "^0.5.1"
+  }
+}
