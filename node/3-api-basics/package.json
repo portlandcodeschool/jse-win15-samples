@@ -1,0 +1,17 @@
+{
+  "name": "basic-api-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server0.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server0.js"
+  },
+  "author": "Dan Bauer",
+  "license": "MIT",
+  "dependencies": {
+    "body": "^4.5.0",
+    "routes-router": "^4.1.1",
+    "st": "^0.5.1"
+  }
+}
