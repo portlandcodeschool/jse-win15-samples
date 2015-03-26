@@ -51,4 +51,4 @@ function list() {
 	$.get("/list");
 }
 
-console.log('list(), test.get(str), test.post(str), test.put(str), test.del(str)');
+console.log("list(), test.get(str), test.post('',obj), test.put('id',obj), test.del('id')");

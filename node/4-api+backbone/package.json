@@ -11,6 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "body": "^4.5.0",
+    "orchestrate": "^0.4.2",
     "routes-router": "^4.1.1",
     "st": "^0.5.1"
   }
