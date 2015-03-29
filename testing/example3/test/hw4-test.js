@@ -1,5 +1,5 @@
 var makeCard = require('../hw4.js');
-var chai = require('chai');
+var chai = require('chai'); // lets us use the more verbose Chai assertion library
 var assert = chai.assert;
 
 // card instances needed for assertions:
