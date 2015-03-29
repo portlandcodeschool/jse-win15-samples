@@ -2,6 +2,9 @@ var assert = require('assert');
 var cardTools = require('../hw3.js'); // note this means we need to export as a module
 
 describe('cardTools object', function() {
+  it('should be an object', function() {
+    assert.equal(typeof(cardTools), 'object');
+  });
 
   context('rank function', function() {
     it('should be a function', function() {
