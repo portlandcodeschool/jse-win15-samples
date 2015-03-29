@@ -18,7 +18,8 @@ describe('makeCard factory', function() {
   it('should be a function', function() {
     assert.isFunction(makeCard);
   });
-  // the assertions can be compacted like this, with multiple in a single 'it'
+  // the assertions can be compacted like this, with multiple in a single 'it'.
+  // Note the new method here for checking non-strict falsity
   it('should validate values that are passed in', function() {
     assert.notOk(makeCard(52));
     assert.notOk(makeCard("0"));
