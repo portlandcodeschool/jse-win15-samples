@@ -1,5 +1,8 @@
+// This example brings in Chai, which is an assertion library that has many
+// more options for defining tests than node's assert library does.
+
 var makeCard = require('../hw4.js');
-var chai = require('chai'); // lets us use the more verbose Chai assertion library
+var chai = require('chai');
 var assert = chai.assert;
 
 // card instances needed for assertions:
@@ -18,7 +21,6 @@ describe('makeCard factory', function() {
   it('should be a function', function() {
     assert.isFunction(makeCard);
   });
-  // the assertions can be compacted like this, with multiple in a single 'it'.
   // Note the new method here for checking non-strict falsity
   it('should validate values that are passed in', function() {
     assert.notOk(makeCard(52));

@@ -1,3 +1,13 @@
+// In this example, we are breaking the tests apart into their own file
+// This means we have to make a number of structural changes, both in
+// the test file and in the file to be tested. We also need to generate
+// a package.json file where we list the modules (like mocha) that we'll
+// be using. Finally, we have the option of creating a mocha.opts file
+// in the test directory if we want to specify any particular options.
+// To run the tests in this and subsequent examples, we can just type
+// 'mocha' in the directory containing the file we want to test (NOT the
+// directory containing the tests themselves).
+
 var assert = require('assert');
 var cardTools = require('../hw3.js'); // note this means we need to export as a module
 
@@ -11,6 +21,7 @@ describe('cardTools object', function() {
       assert.equal(typeof(cardTools.rank), 'function');
     });
     it('should return the correct rank for valid IDs', function() {
+      // the assertions can be compacted like this, with multiple in a single 'it'.
       assert.equal(cardTools.rank(0), 1);
       assert.equal(cardTools.rank(3), 1);
       assert.equal(cardTools.rank(51), 13);

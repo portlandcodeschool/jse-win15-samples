@@ -1,4 +1,8 @@
-// Error-detecting version
+// In this example, we're using only a slight variation on the original solution to
+// homework 2's cards problem. The assertions are included at the bottom of this
+// file, and will run from the command line with 'mocha hw2.js' assuming you are
+// in the directory containing this file. The main difference is that instead of
+// writing our own 'assert' function, we're using Node's built-in 'assert' library.
 
 // Helper function:
 function isValid(num,low,high) { // Returns--> NaN, true
