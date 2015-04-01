@@ -67,3 +67,7 @@ var Card = (function(){
   // Return constructor:
   return Ctor;
 })(); //end superclass IIFE
+
+if (typeof module !== "undefined") {
+  module.exports = Card;
+}

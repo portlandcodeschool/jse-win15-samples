@@ -1,7 +1,11 @@
+try {
+  var Card = require('../hw6.js');
+  var chai = require('chai');
+} catch(err) {}
 var expect = chai.expect;
 
 // card instances needed for assertions:
-describe('makeCard constructor', function() {
+describe('Card constructor', function() {
   var card0, card3, card5, card51, card52;
 
   before(function() {

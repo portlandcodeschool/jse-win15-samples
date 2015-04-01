@@ -1,0 +1,12 @@
+.red {
+	color: red;
+}
+
+.black {
+	color: black;
+}
+
+.cardImage {
+	width: 60px;
+	/* more style props here */
+}
