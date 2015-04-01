@@ -1,8 +1,4 @@
-// In this example, we're using only a slight variation on the original solution to
-// homework 2's cards problem. The assertions are included at the bottom of this
-// file, and will run from the command line with 'mocha hw2.js' assuming you are
-// in the directory containing this file. The main difference is that instead of
-// writing our own 'assert' function, we're using Node's built-in 'assert' library.
+// Error-detecting version
 
 // Helper function:
 function isValid(num,low,high) { // Returns--> NaN, true
@@ -49,143 +45,82 @@ function name(card) { //--> string, NaN
         (rankNames[theRank]+' of '+suitNames[theSuit]);//build the name string
 }
 
-// begin tests
 
-var assert = require('assert');
-describe('rank', function() {
-  it('should be a function', function() {
-    assert.equal(typeof(rank), 'function');
-  });
-  it('should return 1 when the card ID is 0', function() {
-    assert.equal(rank(0), 1);
-  });
-  it('should return 1 when the card ID is 3', function() {
-    assert.equal(rank(3), 1);
-  });
-  it('should return 13 when the card ID is 51', function() {
-    assert.equal(rank(51), 13);
-  });
-  it('should return NaN when the card ID is 52', function() {
-    assert.equal(Number.isNaN(rank(52)), true);
-  });
-  it('should return NaN when the card ID is "0"', function() {
-    assert.equal(Number.isNaN(rank('0')), true);
-  });
-  it('should return NaN when the card ID is -1', function() {
-    assert.equal(Number.isNaN(rank(-1)), true);
-  });
-  it('should return NaN when the card ID is 2.5', function() {
-    assert.equal(Number.isNaN(rank(2.5)), true);
-  });
-  it('should return NaN when the card ID is undefined', function() {
-    assert.equal(Number.isNaN(rank(undefined)), true);
-  });
-});
 
-describe('suit', function() {
-  it('should be a function', function() {
-    assert.equal(typeof(suit), 'function');
-  });
-  it('should return 1 when the card ID is 0', function() {
-    assert.equal(suit(0), 1);
-  });
-  it('should return 2 when the card ID is 5', function() {
-    assert.equal(suit(5), 2);
-  });
-  it('should return 4 when the card ID is 51', function() {
-    assert.equal(suit(0), 1);
-  });
-  it('should return NaN when the card ID is 52', function() {
-    assert.equal(Number.isNaN(suit(52)), true);
-  });
-  it('should return NaN when the card ID is false', function() {
-    assert.equal(Number.isNaN(suit(false)), true);
-  });
-  it('should return NaN when the card ID is true', function() {
-    assert.equal(Number.isNaN(suit(true)), true);
-  });
-  it('should return NaN when the card ID is -1', function() {
-    assert.equal(Number.isNaN(suit(-1)), true);
-  });
-  it('should return NaN when the card ID is 3.14', function() {
-    assert.equal(Number.isNaN(suit(3.14)), true);
-  });
-});
+// TESTING:
+function assert(claim,message) {
+    if (!claim) console.error(message);
+}
+assert(rank(0)===1,  "Test 1 failed");
+assert(rank(3)===1,  "Test 2 failed");
+assert(rank(51)===13,"Test 3 failed");
+assert(suit(0)===1,  "Test 4 failed");
+assert(suit(5)===2,  "Test 5 failed");
+assert(suit(51)===4, "Test 6 failed");
+assert(cardID(1,1)===0,    "Test 7 failed");
+assert(cardID(13,4)===51,  "Test 8 failed");
+assert(cardID(8,3)===30,   "Test 9 failed");
+assert(color(0)==='red',   "Test 10 failed");
+assert(color(2)==='black', "Test 11 failed");
+assert(name(5)==='Two of Diamonds', "Test 12 failed");
+assert(name(51)==='King of Clubs',  "Test 13 failed");
 
-describe('cardID', function() {
-  it('should be a function', function() {
-    assert.equal(typeof(cardID), 'function');
-  });
-  it('should return 0 when the input is (1,1)', function() {
-    assert.equal(cardID(1,1), 0);
-  });
-  it('should return 51 when the input is (13,4)', function() {
-    assert.equal(cardID(13,4), 51);
-  });
-  it('should return 30 when the input is (8,3)', function() {
-    assert.equal(cardID(8,3), 30);
-  });
-  it('should return NaN when the input is (0,1)', function() {
-    assert.equal(Number.isNaN(cardID(0,1)), true);
-  });
-  it('should return NaN when the input is ("1",1)', function() {
-    assert.equal(Number.isNaN(cardID('1',1)), true);
-  });
-  it('should return NaN when the input is (1,5)', function() {
-    assert.equal(Number.isNaN(cardID(1,5)), true);
-  });
-  it('should return NaN when the input is (14,1)', function() {
-    assert.equal(Number.isNaN(cardID(14,1)), true);
-  });
-  it('should return NaN when the input is (-1,-1)', function() {
-    assert.equal(Number.isNaN(cardID(-1,-1)), true);
-  });
-  it('should return NaN when the input is (0.5,1)', function() {
-    assert.equal(Number.isNaN(cardID(0.5,1)), true);
-  });
-  it('should return NaN when the input is (1,NaN)', function() {
-    assert.equal(Number.isNaN(cardID(1,NaN)), true);
-  });
-});
 
-describe('color', function() {
-  it('should be a function', function() {
-    assert.equal(typeof(color), 'function');
-  });
-  it('should return "red" when the color is 0', function() {
-    assert.equal(color(0), 'red');
-  });
-  it('should return "black" when the color is 2', function() {
-    assert.equal(color(2), 'black');
-  });
-  it('should return NaN when the card ID is "apple"', function() {
-    assert.equal(Number.isNaN(color("apple")), true);
-  });
-  it('should return NaN when the card ID is true', function() {
-    assert.equal(Number.isNaN(color(true)), true);
-  });
-  it('should return NaN when the card ID is false', function() {
-    assert.equal(Number.isNaN(color(false)), true);
-  });
-});
+// Extra testing!
+// These tests check that invalid arguments produce invalid output.
+// I.e. "garbage in guarantees garbage out".
+assert(isNaN(rank(52)),  "Test 21 failed");
+assert(isNaN(rank("0")), "Test 22 failed");
+assert(isNaN(rank(-1)),  "Test 23 failed");
+assert(isNaN(rank(2.5)), "Test 24 failed");
+assert(isNaN(rank(undefined)),"Test 25 failed");
 
-describe('name', function() {
-  it('should be a function', function() {
-    assert.equal(typeof(name), 'function');
-  });
-  it('should return "Two of Diamonds" when the cardID is 5', function() {
-    assert.equal(name(5), 'Two of Diamonds');
-  });
-  it('should return "King of Clubs" when the cardID is 51', function() {
-    assert.equal(name(51), 'King of Clubs');
-  });
-  it('should return NaN when the card ID is -1', function() {
-    assert.equal(Number.isNaN(name(-1)), true);
-  });
-  it('should return NaN when the card ID is 52', function() {
-    assert.equal(Number.isNaN(name(52)), true);
-  });
-  it('should return NaN when the card ID is NaN', function() {
-    assert.equal(Number.isNaN(name(NaN)), true);
-  });
-});
+assert(isNaN(suit(52)),   "Test 26 failed");
+assert(isNaN(suit(false)),"Test 27 failed");
+assert(isNaN(suit(true)), "Test 28 failed");
+assert(isNaN(suit(-1)),   "Test 29 failed");
+assert(isNaN(suit(3.14)), "Test 30 failed");
+
+assert(isNaN(cardID(0,1)),   "Test 31 failed");
+assert(isNaN(cardID("1",1)), "Test 32 failed");
+assert(isNaN(cardID(1,5)),   "Test 33 failed");
+assert(isNaN(cardID(14,1)),  "Test 34 failed");
+assert(isNaN(cardID(-1,-1)), "Test 35 failed");
+assert(isNaN(cardID(0.5,1)), "Test 36 failed");
+assert(isNaN(cardID(1,NaN)), "Test 37 failed");
+
+// My bad: the following test are inadequate!  Since they provide invalid arguments,
+//  they should all return NaN.  But function isNaN(result) will be true if result
+//  is a string.  So these tests fail to ensure that garbage in guarantees garbage out!
+assert(isNaN(color('apple')),"Test 41 failed");
+assert(isNaN(color(true)),   "Test 42 failed");
+assert(isNaN(name(false)),   "Test 43 failed");
+assert(isNaN(name(-1)),      "Test 44 failed");
+assert(isNaN(name(52)),      "Test 45 failed");
+assert(isNaN(name(NaN)),     "Test 46 failed");
+
+// Part c: more tests!
+
+// Success cases:
+assert(rank(4)===2,      "Test 51 failed");
+assert(color(4)==='red', "Test 52 failed");
+assert(name(4)==='Two of Hearts', "Test 53 failed");
+
+// Failure cases:
+// Fix 41 thru 46 above:
+assert(Number.isNaN(color('apple')),"Test 41b failed");
+assert(Number.isNaN(color(true)),   "Test 42b failed");
+assert(Number.isNaN(name(false)),   "Test 43b failed");
+assert(Number.isNaN(name(-1)),      "Test 44b failed");
+assert(Number.isNaN(name(52)),      "Test 45b failed");
+assert(Number.isNaN(name(NaN)),     "Test 46b failed");
+
+if (module) {
+    module.exports = {
+        rank:rank,
+        suit:suit,
+        name:name,
+        color:color,
+        cardID:cardID
+    }
+}
