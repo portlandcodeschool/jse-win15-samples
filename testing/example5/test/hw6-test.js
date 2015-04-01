@@ -5,7 +5,7 @@ try {
 var expect = chai.expect;
 
 // card instances needed for assertions:
-describe('make the thing', function() {
+describe('Card constructor', function() {
   var card0, card3, card5, card51, card52;
 
   before(function() {

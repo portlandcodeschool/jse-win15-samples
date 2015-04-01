@@ -1,15 +1,21 @@
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf8">
+<!-- code/css to be tested: -->
 <link rel='stylesheet' href='cards.css'/>
+<script type='text/javascript' src='hw5.js'></script>
+<!-- mocha+chai: -->
 <link rel='stylesheet' media="all" href="../node_modules/mocha/mocha.css"/>
-</head>
-<body>
-	<div id='mocha'></div>
-	<div id='rendering'></div>
 <script src='../node_modules/mocha/mocha.js'></script>
 <script src='../node_modules/chai/chai.js'></script>
-<script type='text/javascript' src='hw5.js'></script>
+</head>
+
+<body>
+<!-- partitions for output -->
+	<div id='mocha'></div>
+	<div id='rendering'></div>
+<!-- set up mocha tests -->
 <script>mocha.setup('bdd')</script>
 <script src='test/hw5-test.js'></script>
 <script src='test/hw5-testRender.js'></script>
