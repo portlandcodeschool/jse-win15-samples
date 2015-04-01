@@ -1,0 +1,21 @@
+<html>
+<head>
+<meta charset="utf8">
+<link rel='stylesheet' href='cards.css'/>
+<script type='text/javascript' src='hw5.js'></script>
+<link rel='stylesheet' href='mocha.css'/>
+</head>
+<body>
+	<div id='mocha'></div>
+	<div id='rendering'></div>
+<script src='mocha.js'></script>
+<script src='node_modules/chai/chai.js'></script>
+<script>mocha.setup('bdd')</script>
+<script src='test/hw5-test.js'></script>
+<script src='test/hw5-testRender.js'></script>
+<script>
+	mocha.checkLeaks();
+	mocha.run();
+</script>
+</body>
+</html>
