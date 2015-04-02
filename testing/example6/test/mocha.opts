@@ -1,0 +1,4 @@
+--watch
+--ui bdd
+--watch-extensions opts
+--inline-diffs

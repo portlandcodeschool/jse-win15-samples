@@ -1,13 +1,3 @@
-// In this example, we are breaking the tests apart into their own file
-// This means we have to make a number of structural changes, both in
-// the test file and in the file to be tested. We also need to generate
-// a package.json file where we list the modules (like mocha) that we'll
-// be using. Finally, we have the option of creating a mocha.opts file
-// in the test directory if we want to specify any particular options.
-// To run the tests in this and subsequent examples, we can just type
-// 'mocha' in the directory containing the file we want to test (NOT the
-// directory containing the tests themselves).
-
 var assert = require('assert');
 var cardTools = require('../hw3.js'); // note this means we need to export as a module
 
