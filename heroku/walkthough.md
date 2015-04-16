@@ -59,7 +59,7 @@ Deploy again:
 
 Follow those steps when you're ready to deploy your current project repo...
 	cd <project>
-	<create Procfile>
+	<create or copy Procfile>
 	git add Procfile
 	git commit...
 	heroku git:remote -a <capstone-app>
