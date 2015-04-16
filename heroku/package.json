@@ -1,0 +1,15 @@
+{
+  "name": "heroku-config-demo-server",
+  "description": "A sample Node.js app using Express 4",
+  "main": "server0.js",
+  "scripts": {
+    "start": "node server0.js"
+  },
+  "dependencies": {
+    "express": "~4.9.x"
+  },
+  "engines": {
+    "node": "0.12.2"
+  },
+  "license": "MIT"
+}
